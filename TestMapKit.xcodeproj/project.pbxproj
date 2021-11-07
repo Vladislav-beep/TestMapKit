@@ -42,7 +42,6 @@
 		B97A0EAB273824C70030AB0C = {
 			isa = PBXGroup;
 			children = (
-				B97A0ECC273842E10030AB0C /* Alert.swift */,
 				B97A0EB6273824C80030AB0C /* TestMapKit */,
 				B97A0EB5273824C80030AB0C /* Products */,
 			);
@@ -62,6 +61,7 @@
 				B97A0EB7273824C80030AB0C /* AppDelegate.swift */,
 				B97A0EB9273824C80030AB0C /* SceneDelegate.swift */,
 				B97A0EBB273824C80030AB0C /* ViewController.swift */,
+				B97A0ECC273842E10030AB0C /* Alert.swift */,
 				B97A0EBD273824C80030AB0C /* Main.storyboard */,
 				B97A0EC0273824CC0030AB0C /* Assets.xcassets */,
 				B97A0EC2273824CC0030AB0C /* LaunchScreen.storyboard */,

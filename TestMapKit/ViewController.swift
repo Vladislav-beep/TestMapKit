@@ -56,7 +56,9 @@ class ViewController: UIViewController {
     }
     
     @objc func addAdressButtonTapped() {
-        
+        showAlert(title: "Add adress", placeHolder: "Enter adress") { text in
+            print(text)
+        }
     }
     
     @objc func routeButtonTapped() {
@@ -103,5 +105,35 @@ extension ViewController {
             resetButton.heightAnchor.constraint(equalToConstant: 36),
             resetButton.widthAnchor.constraint(equalToConstant: 100)
         ])
+    }
+}
+
+extension ViewController {
+    
+    func showAlert(title: String, placeHolder: String, completion: @escaping (String) -> Void) {
+        
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            let tfText = alert.textFields?.first
+            guard let text = tfText?.text, tfText?.text != "" else { return }
+            completion(text)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addTextField { (tf) in
+            tf.placeholder = placeHolder
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    func errorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
