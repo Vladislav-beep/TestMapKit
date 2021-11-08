@@ -72,6 +72,11 @@ class ViewController: UIViewController {
     }
     
     @objc func resetButtonTapped() {
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        annotationArray = []
+        resetButton.isHidden = true
+        routeButton.isHidden = true
         
     }
     
